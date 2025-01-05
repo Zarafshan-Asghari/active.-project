@@ -1,0 +1,17 @@
+.swiper-wrapper {
+  padding: 10px 5px;
+  margin-bottom: 20px;
+}
+.swiper-pagination {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  border: solid 1px white;
+}
+.swiper-pagination-bullet-active {
+  background-color: white;
+}

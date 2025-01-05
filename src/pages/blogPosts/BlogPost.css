@@ -1,0 +1,25 @@
+.swiper-pagination-bullet-active {
+  background-color: black;
+}
+.swiper-pagination-bullet {
+  border: 1px solid black;
+  width: 10px;
+  height: 10px;
+  bottom: 0;
+}
+.swiper-slide {
+  width: 230px;
+}
+.swiper-slide-prev {
+  width: 230px;
+}
+.swiper-slide-next {
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 4px;
+}
+.swiper-slide-active {
+  width: 230px;
+}
