@@ -1,23 +1,22 @@
 import "./Card.css";
-function Card() {
+function Card({ data }) {
   return (
-    <div className="relative group overflow-hidden w-[20.0625rem] h-[14.04881rem] p-4 flex shrink-0  flex-col gap-6 items-start border-[0.809px] border-neutral-500 bg-[#141416] rounded-[1.51606rem] shadow-sm  hover:scale-105 transition duration-500 ease-in">
+    <div className="text-white relative group overflow-hidden w-[20.0625rem] h-[14.04881rem] p-4 flex shrink-0  flex-col gap-6 items-start border-[0.809px] border-neutral-500 bg-[#141416] rounded-[1.51606rem] shadow-sm  hover:scale-105 transition duration-500 ease-in">
       {/* card header */}
       <div className="flex w-full items-center justify-between">
         <div className="flex flex-col gap-1">
-          <span>name</span>
-          <span>position</span>
+          <span>{data.name}</span>
+          <span>{data.position}</span>
         </div>
         {/* <img src="" alt="image" /> */}
-        <div>img</div>
+        <div>
+          <img src={data.photo} className="w-12 h-12 rounded-full" alt="" />
+        </div>
       </div>
       {/* card content */}
 
       <p className="font-Inter text-[0.60644rem] font-normal not-italic leading-[0.90963rem]">
-        Sarah has contributed significantly to our open-source projects,
-        mentoring new developers along the way. Her recent project on enhancing
-        site performance has resulted in a 50% reduction in load times,
-        benefiting all users.
+        {data.describtion}
       </p>
 
       {/* card footer */}
@@ -39,7 +38,10 @@ function Card() {
           </svg>
         </div>
 
-        <a className="hover:cursor-pointer text-xs leading-[0.7075rem] font-normal">
+        <a
+          href="/"
+          className="hover:cursor-pointer text-xs leading-[0.7075rem] font-normal"
+        >
           view more
         </a>
       </div>

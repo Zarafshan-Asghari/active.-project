@@ -12,7 +12,7 @@ function BlogItem({ img, date, title, text, writerImg, writerName }) {
         </span>
 
         {/* title */}
-        {/* TODO line-height 1.2 */}
+
         <h3 className="text-[18px] text-gray-600  transition duration-300 hover:text-green-500  font-medium ">
           {title}
         </h3>

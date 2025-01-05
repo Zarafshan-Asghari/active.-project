@@ -7,6 +7,7 @@ import ImgWriter1 from "./images/team-1.jpg";
 import ImgWriter2 from "./images/team-2.jpg";
 import ImgWriter3 from "./images/team-3.jpg";
 import "./BlogPost.css";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -80,13 +81,11 @@ function BlogPosts() {
         spaceBetween={30}
         slidesPerView={1}
         loop={true}
-        autoplay={{ delay: 10000, disableOnInteraction: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: true }}
         freeMode={true}
         navigation
         pagination={{
           clickable: true,
-          bulletClass: "swiper-pagination-bullet", // Custom bullet class
-          bulletActiveClass: "swiper-pagination-bullet-active", // Custom active bullet class
         }}
         modules={[Pagination, FreeMode, Autoplay]}
         className="mySwiper"
@@ -109,11 +108,6 @@ function BlogPosts() {
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* <div className="flex flex-col space-y-4 md:flex-row md:space-x-6 md:space-y-0 p-6 md:p-4">
-        {blogData.map((blog, index) => (
-          <BlogItem key={index} {...blog} />
-        ))}
-      </div> */}
     </div>
   );
 }

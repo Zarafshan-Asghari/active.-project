@@ -10,9 +10,8 @@
   width: 12px; /* Adjust the size as needed */
   height: 12px; /* Adjust the size as needed */
   border-radius: 50%; /* Make it circular */
-  opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #1d4ed8; /* Tailwind's bg-blue-700 */
+  background-color: green;
 }

@@ -1,43 +1,47 @@
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination } from "swiper/modules";
 import Card from "../communityCard/Card";
 import Title from "../title/Title";
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-
 import "./community.css";
 
-// import required modules
-import { EffectCoverflow, Pagination } from "swiper/modules";
-
 function Community() {
+  const communityData = [
+    {
+      name: "Ali",
+      position: "manager",
+      photo: "/assets/img/team/team-1.jpg",
+      describtion: `ali has contributed significantly to our open-source projects, mentoring new developers along the way. Her recent project on enhancing site performance has resulted in a 50% reduction in load times, benefiting all users.`,
+    },
+    {
+      name: "Sarah",
+      position: "Developer",
+      photo: "/assets/img/team/team-2.jpg",
+      describtion: `Sarah has contributed significantly to our open-source projects, mentoring new developers along the way. Her recent project on enhancing site performance has resulted in a 50% reduction in load times, benefiting all users.`,
+    },
+    {
+      name: "designer",
+      position: "Developer",
+      photo: "/assets/img/team/team-3.jpg",
+      describtion: `Sarah has contributed significantly to our open-source projects, mentoring new developers along the way. Her recent project on enhancing site performance has resulted in a 50% reduction in load times, benefiting all users.`,
+    },
+  ];
+
   return (
-    <div className=" text-[#fff] p-6 flex flex-col items-start justify-start h-screen py-10 bg-[#09090B]">
-      <div className="flex flex-col gap-6 ">
-        <Title title={"Community  Champions"} />
-
-        {/* text */}
-
-        <p className="text-center font-Inter text-[1.125rem]  not-italic font-normal leading-7 lg:px-10">
+    <div className="text-[#fff] p-6 flex flex-col items-start justify-start h-screen py-10 bg-[#09090B]">
+      <div className="flex flex-col gap-6">
+        <Title title={"Community Champions"} />
+        <p className="text-center font-Inter text-[1.125rem] not-italic font-normal leading-7 lg:px-10">
           Our Community Champions are the heart and soul of our network,
           dedicated individuals who inspire and uplift others through their
-          outstanding contributions. This section highlights those who go above
-          and beyond to foster collaboration, drive innovation, and promote
-          inclusivity within our community. Join us in celebrating their
-          achievements and discovering how their passion and commitment are
-          making a lasting impact!
+          outstanding contributions...
         </p>
       </div>
-      {/* cards */}
-      {/* <div className="flex items-center  mt-[2.5rem] mb-[1.5rem] gap-6 justify-center lg:w-[77rem]"> */}
-      <div className="my-10 py-6  flex items-center justify-center lg:w-[77rem] mx-auto">
-        {" "}
+      <div className="my-10 py-6 flex items-center justify-center lg:w-[77rem] mx-auto">
         <Swiper
-          // effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={3}
@@ -52,28 +56,14 @@ function Community() {
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card />
-          </SwiperSlide>
+          {communityData.map((data, index) => (
+            <SwiperSlide key={index}>
+              <Card data={data} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
-    // </div>
   );
 }
 
